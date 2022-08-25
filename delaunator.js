@@ -1,3 +1,7 @@
+(function (factory) {
+typeof define === 'function' && define.amd ? define(factory) :
+factory();
+})((function () { 'use strict';
 
 const EPSILON = Math.pow(2, -52);
 const EDGE_STACK = new Uint32Array(512);
@@ -484,3 +488,5 @@ function defaultGetY(p) {
 module.exports = {
     Delaunator,
 };
+
+}));

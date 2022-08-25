@@ -1,20 +1,19 @@
-
-import {test} from 'tape';
-import Delaunator from '../index.js';
-import {readFileSync} from 'fs';
+const {test} = require('tape');
+const {Delaunator} = require('../index.js');
+const {readFileSync} = require('fs');
 
 function loadJSON(path) {
-    return JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
+    return JSON.parse(readFileSync(path, {encoding: 'utf8', flag: 'r'}));
 }
 
-const points = loadJSON('./fixtures/ukraine.json');
-const issue13 = loadJSON('./fixtures/issue13.json');
-const issue43 = loadJSON('./fixtures/issue43.json');
-const issue44 = loadJSON('./fixtures/issue44.json');
-const robustness1 = loadJSON('./fixtures/robustness1.json');
-const robustness2 = loadJSON('./fixtures/robustness2.json');
-const robustness3 = loadJSON('./fixtures/robustness3.json');
-const robustness4 = loadJSON('./fixtures/robustness4.json');
+const points = loadJSON('test/fixtures/ukraine.json');
+const issue13 = loadJSON('test/fixtures/issue13.json');
+const issue43 = loadJSON('test/fixtures/issue43.json');
+const issue44 = loadJSON('test/fixtures/issue44.json');
+const robustness1 = loadJSON('test/fixtures/robustness1.json');
+const robustness2 = loadJSON('test/fixtures/robustness2.json');
+const robustness3 = loadJSON('test/fixtures/robustness3.json');
+const robustness4 = loadJSON('test/fixtures/robustness4.json');
 
 test('triangulates plain array', (t) => {
     const d = new Delaunator([].concat(...points));

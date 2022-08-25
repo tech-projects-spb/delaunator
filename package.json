@@ -4,12 +4,11 @@
   "description": "An incredibly fast JavaScript library for Delaunay triangulation of 2D points",
   "main": "index.js",
   "module": "index.js",
-  "type": "module",
   "jsdelivr": "delaunator.min.js",
   "unpkg": "delaunator.min.js",
   "sideEffects": false,
   "dependencies": {
-    "robust-predicates": "^3.0.1"
+    "robust-predicates": "github:tech-projects-spb/robust-predicates"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.1.3",
@@ -45,7 +44,7 @@
       "no-sequences": 0
     },
     "parserOptions": {
-      "ecmaVersion": 2020
+      "ecmaVersion": 2019
     }
   },
   "keywords": [
